@@ -7,6 +7,7 @@ var hooksObject = {
 	    insert: function(error, result) {
 	    	debugger;
 	    	console.log(result);
+	    	debugger;	
 	    	if (ServerSession.get('currentId') == undefined){
 		    	ServerSession.set('currentId', result);
 		    }else{
