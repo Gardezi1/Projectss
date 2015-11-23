@@ -8,7 +8,7 @@ var hooksObject = {
 	    	debugger;
 	    	console.log(result);
 	    	debugger;	
-	    	if (ServerSession.get('currentId') == undefined){
+	    	if (ServerSession.get('currentId') == undefined || ServerSession.get('currentId') == false){
 		    	ServerSession.set('currentId', result);
 		    }else{
 		    	 var oldReminder = Reminders.findOne({_id: ServerSession.get('currentId')});
