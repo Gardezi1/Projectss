@@ -11,6 +11,13 @@ Meteor.methods({
          var everyMinute = new Cron(function() {
             console.log("Outputting Data");
             console.log(data);
+            var expired = {"expired": "yes"}
+            Reminders.update( {_id: data} , {$set : {"expired" : "yes"}});
+            //ServerSession.set("reminderID"  , data);
+            
+            //Meteor.ClientCall.apply(1, "ReminderAlert", data , function(error , result){
+            //   console.log(result);
+            //})
         }, {
             minute: d.getMinutes(),
             hour: d.getHours(),

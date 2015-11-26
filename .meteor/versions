@@ -1,6 +1,7 @@
 aldeed:autoform@5.7.1
 aldeed:collection2@2.3.1
 aldeed:simple-schema@1.1.0
+anti:methods@0.4.0
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
 babel-runtime@0.1.4
