@@ -1,12 +1,7 @@
 Template.addReminder.helpers({
 	alertMessage: function(){
 		console.log("Bye World ");
-		debugger;
-		var reminders = Reminders.find({"expired": "yes"}).fetch();
-		for (i = 0 ; i < reminders.length ; i++){
-			//alert("Reminder Found");
-			alert(reminders[i].text);
-		}
+		
 	}
 });
 
@@ -26,6 +21,17 @@ var hooksObject = {
 	    }
   	}
 };	
+
+Tracker.autorun( function(){
+	debugger;
+	var reminders = Reminders.find({"expired": "yes"}).fetch();
+	for (i = 0 ; i < reminders.length ; i++){
+		//alert("Reminder Found");
+		alert(reminders[i].text);
+		Reminders.update( {_id: reminders[i]._id} , {$set : {"expired" : "ok"}});
+	}
+
+});
 
 AutoForm.addHooks('insertRemindersForm', hooksObject);
 
